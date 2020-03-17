@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>palindrome</title>
+     <style>
+         h4{
+             text-align: center;
+             color:crimson;
+             background-color:pink;
+         }
+         body{
+             background-color:lightpink;
+         }
+     </style>
+</head>
+<body>
+    <h4> <br> PALINDROME OR NOT <br><br> </h4>
+    <div class="containers">
+        <div class="rows">
+            <div class="col col-12 col-sm-2">
+                <tr>
+                    <td></td>
+                    <td></td>
+                </tr>
+            </div>
+            <div class="col col-12 col-sm-8">
+                <form >
+                <table class="table">
+                    <tr>
+                        <td>Enter a number</td>
+                        <td><input type="text" class="form-control" id="num"></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td><button type="button" class="btn btn-secondary" onclick="palindrome_or_not();"> SUBMIT </button></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td><p id="result"></p></td>
+                    </tr>
+                </table>
+                </form>
+                <div class="col col-12 col-sm-2">
+                    <tr>
+                        <td></td>
+                        <td></td>
+                    </tr>                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+
+        function palindrome_or_not()
+        {
+            var num = parseInt(document.getElementById("num").value);
+            var a = num;
+            var rev = 0;
+            var rem = 0;
+            while(num>0)
+            {
+                rem = num%10;
+                rev = rev*10+rem;
+                num = parseInt(num/10);
+            }
+            if(rev==a){
+                document.getElementById("result").innerHTML = "It is a palindrome";
+            }
+            else{
+            document.getElementById("result").innerHTML = "It is not a palindrome";
+            }
+       }
+    </script>
+</body>
+</html>
